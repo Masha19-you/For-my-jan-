@@ -57,39 +57,7 @@
       <button onclick="nextMessage()" id="nextBtn">Next ➡️</button>
     </div>
   </div>
-     `;
-      }
-    }
 
-    function answer(ans) {
-      if(ans === 'Yes') {
-        document.getElementById("message").innerText = "Good boy! love you 🥰";
-        document.getElementById("buttons").style.display = "none";
-      } else {
-        document.getElementById("message").innerText = " Dobara ja apchr axhuu😢 !";
-        document.getElementById("buttons").style.display = "none";
-      }
-    }
-
-    function createHeart() {
-      const heart = document.createElement('div');
-      heart.className = 'heart';
-      heart.style.left = Math.random() * window.innerWidth + 'px';
-      heart.style.fontSize = (20 + Math.random() * 30) + 'px';
-      heart.style.animationDuration = (2 + Math.random() * 3) + 's';
-      heart.innerText = Math.random() < 0.5 ? '❤️' : 'Ja pagal';
-      document.body.appendChild(heart);
-      setTimeout(() => heart.remove(), 5000);
-    }
-
-    // continuously generate hearts from the start
-    setInterval(() => {
-      for(let i=0; i<6; i++) createHeart();
-    }, 400);
-  </script>
-
-</body>
-</html>
   <script>
     const messages = [
       "Loii! 💖",
@@ -116,8 +84,8 @@
         // Last message
         document.getElementById("message").innerText = "dobara hurt acha mu k??";
         document.getElementById("buttons").innerHTML = `
-          <button onclick="answer('Yes')">Yes😢</button>
-          <button onclick="answer('No')">No🥰 </button>
+          <button onclick="answer('Yes')">Yes 😢</button>
+          <button onclick="answer('No')">No 🥰</button>
         `;
       }
     }
@@ -127,6 +95,27 @@
         document.getElementById("message").innerText = "Okay bye";
         document.getElementById("buttons").style.display = "none";
       } else {
-        document.getElementById("message").innerText = " Good boy! love you 🥰 !";
+        document.getElementById("message").innerText = "Good boy! love you 🥰 !";
         document.getElementById("buttons").style.display = "none";
-   
+      }
+    }
+
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * window.innerWidth + 'px';
+      heart.style.fontSize = (20 + Math.random() * 30) + 'px';
+      heart.style.animationDuration = (2 + Math.random() * 3) + 's';
+      heart.innerText = Math.random() < 0.5 ? '❤️' : 'Ja pagal';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 5000);
+    }
+
+    // continuously generate hearts from the start
+    setInterval(() => {
+      for(let i=0; i<6; i++) createHeart();
+    }, 400);
+  </script>
+
+</body>
+</html>
