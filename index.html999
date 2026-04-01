@@ -78,7 +78,8 @@
       index++;
       if (index < messages.length) {
         document.getElementById("message").innerText = messages[index];
-        createHeart(); // hearts appear on every next
+        // create multiple hearts for each click
+        for(let i=0; i<5; i++) createHeart();
       } else {
         // Last message
         document.getElementById("message").innerText = "dobara hurt acha mu k??";
@@ -86,8 +87,6 @@
           <button onclick="answer('Yes')">Yes 💕</button>
           <button onclick="answer('No')">No 😢</button>
         `;
-        // Start floating hearts and "Ja pagal" text automatically
-        setInterval(createHeart, 500);
       }
     }
 
@@ -107,11 +106,15 @@
       heart.style.left = Math.random() * window.innerWidth + 'px';
       heart.style.fontSize = (20 + Math.random() * 30) + 'px';
       heart.style.animationDuration = (2 + Math.random() * 3) + 's';
-      // Randomly decide heart or "Ja pagal" text
       heart.innerText = Math.random() < 0.5 ? '❤️' : 'Ja pagal';
       document.body.appendChild(heart);
-      setTimeout(() => heart.remove(), 4000);
+      setTimeout(() => heart.remove(), 5000);
     }
+
+    // continuously generate hearts from the start
+    setInterval(() => {
+      for(let i=0; i<6; i++) createHeart();
+    }, 400);
   </script>
 
 </body>
