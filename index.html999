@@ -57,36 +57,7 @@
       <button onclick="nextMessage()" id="nextBtn">Next ➡️</button>
     </div>
   </div>
-
-  <script>
-    const messages = [
-      "Loii! 💖",
-      "une hurt atah j",
-      "une jr sena ki un sukoon ka hurusha ja xum bagair",
-      "J buttn hurt amanah bah une chaga xum",
-      "thap mo k nuher ayana bah",
-      "khair bila huru masla api",
-      "aur tay gosas bilum bay 🌸",
-      "ja chal echa bah ete gor gayshila , ja akhurum passand gotas bes akaishila?",
-      "J hurt amaya bah une chagamin xum ,Shabaz j k haqdar bah shua treatment e",
-      "Aur ja Buttn ayarum bah un💕. une gogham bah k gogham bah"
-    ];
-
-    let index = 0;
-
-    function nextMessage() {
-      index++;
-      if (index < messages.length) {
-        document.getElementById("message").innerText = messages[index];
-        // create multiple hearts for each click
-        for(let i=0; i<5; i++) createHeart();
-      } else {
-        // Last message
-        document.getElementById("message").innerText = "dobara hurt acha mu k??";
-        document.getElementById("buttons").innerHTML = `
-          <button onclick="answer('Yes')">Yes 💕</button>
-          <button onclick="answer('No')">No 😢</button>
-        `;
+     `;
       }
     }
 
@@ -119,3 +90,43 @@
 
 </body>
 </html>
+  <script>
+    const messages = [
+      "Loii! 💖",
+      "une hurt atah j",
+      "une jr sena ki un sukoon ka hurusha ja xum bagair",
+      "J buttn hurt amanah bah une chaga xum",
+      "thap mo k nuher ayana bah",
+      "khair bila huru masla api",
+      "aur tay gosas bilum bay 🌸",
+      "ja chal echa bah ete gor gayshila , ja akhurum passand gotas bes akaishila?",
+      "J hurt amaya bah une chagamin xum ,Shabaz j k haqdar bah shua treatment e",
+      "Aur ja Buttn ayarum bah un💕. une gogham bah k gogham bah"
+    ];
+
+    let index = 0;
+
+    function nextMessage() {
+      index++;
+      if (index < messages.length) {
+        document.getElementById("message").innerText = messages[index];
+        // create multiple hearts for each click
+        for(let i=0; i<5; i++) createHeart();
+      } else {
+        // Last message
+        document.getElementById("message").innerText = "dobara hurt acha mu k??";
+        document.getElementById("buttons").innerHTML = `
+          <button onclick="answer('Yes')">Yes😢</button>
+          <button onclick="answer('No')">No🥰 </button>
+        `;
+      }
+    }
+
+    function answer(ans) {
+      if(ans === 'Yes') {
+        document.getElementById("message").innerText = "Okay bye";
+        document.getElementById("buttons").style.display = "none";
+      } else {
+        document.getElementById("message").innerText = " Good boy! love you 🥰 !";
+        document.getElementById("buttons").style.display = "none";
+   
