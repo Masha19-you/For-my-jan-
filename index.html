@@ -9,7 +9,7 @@
       font-family: Arial, sans-serif;
       padding: 50px;
       color: #333;
-      overflow: hidden; /* allows hearts to float outside the screen */
+      overflow: hidden; /* allows hearts and text to float outside the screen */
       position: relative;
     }
     .box {
@@ -41,6 +41,7 @@
       color: #ff3366;
       animation: float 4s linear infinite;
       user-select: none;
+      pointer-events: none;
     }
     @keyframes float {
       0% { transform: translateY(0) scale(1); opacity: 1; }
@@ -85,7 +86,7 @@
           <button onclick="answer('Yes')">Yes 💕</button>
           <button onclick="answer('No')">No 😢</button>
         `;
-        // Start floating hearts automatically
+        // Start floating hearts and "Ja pagal" text automatically
         setInterval(createHeart, 500);
       }
     }
@@ -106,7 +107,8 @@
       heart.style.left = Math.random() * window.innerWidth + 'px';
       heart.style.fontSize = (20 + Math.random() * 30) + 'px';
       heart.style.animationDuration = (2 + Math.random() * 3) + 's';
-      heart.innerText = '❤️';
+      // Randomly decide heart or "Ja pagal" text
+      heart.innerText = Math.random() < 0.5 ? '❤️' : 'Ja pagal';
       document.body.appendChild(heart);
       setTimeout(() => heart.remove(), 4000);
     }
