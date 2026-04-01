@@ -1,40 +1,65 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>For You ❤️</title>
+  <title>Shabaz ganay bila gutay</title>
   <style>
     body {
       background: linear-gradient(to right, #ffdde1, #ee9ca7);
       text-align: center;
-      font-family: 'Arial', sans-serif;
+      font-family: Arial, sans-serif;
       padding: 50px;
       color: #333;
     }
-    h1 {
-      font-size: 40px;
-      color: #ff3366;
-    }
-    p {
-      font-size: 20px;
-    }
     .box {
       background: white;
-      padding: 20px;
+      padding: 30px;
       border-radius: 20px;
       display: inline-block;
       box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      max-width: 400px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 10px;
+      border: none;
+      background-color: #ff3366;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #ff6699;
     }
   </style>
 </head>
 <body>
 
   <div class="box">
-    <h1>Loii Shabaz 💕</h1>
-    <p>I love you.</p>
-    <p>un but ayarum bah bay ja 🌸</p>
-    <p>buttnnnn ayarum ❤️</p>
-    <p>— buttn buttn ayarum bah saya bah💖</p>
+    <p id="message">Lay Jan! 💖</p>
+    <button onclick="nextMessage()">Next ➡️</button>
   </div>
+
+  <script>
+    const messages = [
+      "Loii! 💖",
+      "Naa Naa ...tay gosas bilum bay 🌸",
+      "Un Naaa🥰",
+      "Un Naaa ayarum bah",
+      "Buttn ayarum bah💕"
+    ];
+
+    let index = 0;
+
+    function nextMessage() {
+      index++;
+      if (index < messages.length) {
+        document.getElementById("message").innerText = messages[index];
+      } else {
+        document.getElementById("message").innerText = "Will YOU Marry me?? gar echa aka? 😘";
+      }
+    }
+  </script>
 
 </body>
 </html>
